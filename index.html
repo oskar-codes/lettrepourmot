@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="style.css" />
     <style>
-      h1 {
+      #header {
         position: absolute;
         left: 50%;
         top: 0%;
@@ -18,16 +18,30 @@
         top: 0%;
         transform: translate(-50%, -50%) translateY(300px);
       }
+      #button {
+        position: absolute;
+        left: 50%;
+        top: 0%;
+        transform: translate(-50%, -50%) translateY(400px);
+      }
+      #container {
+         position: absolute;
+        left: 50%;
+        top: 0%;
+        transform: translate(-50%, -50%) translateY(500px);
+      }
+      
     </style>
   </head>
   <body>
-    <h1>Lettre pour Mot</h1>
+    <h1 id="header">Lettre pour Mot</h1>
     <input type="text" placeholder="Entrez une lettre ici."></input>
     <button onclick="submit()">Résultat</button>
-    <h1 id="letter"></h1>
-    <p>pour</p>
-    <h1 id="sentence></h1>
-            
+    <div id="container">
+      <h1 id="letter"></h1>
+      <p>pour</p>
+      <h1 id="sentence></h1>
+    </div>
     <script>
       function getAllUrlParams(url) {
         var queryString = url ? url.split('?')[1] : window.location.search.slice(1);
