@@ -6,42 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="style.css" />
     <style>
-      #header {
+      #wrapper {
+        background-color: #eee;
         position: absolute;
-        left: 50%;
         top: 0%;
-        transform: translate(-50%, -50%) translateY(200px);
-      }
-      input {
-        position: absolute;
         left: 50%;
-        top: 0%;
-        transform: translate(-50%, -50%) translateY(240px);
-      }
-      button {
-        position: absolute;
-        left: 50%;
-        top: 0%;
-        transform: translate(-50%, -50%) translateY(340px);
-      }
-      #container {
-         position: absolute;
-        left: 50%;
-        top: 0%;
-        transform: translate(-50%, -50%) translateY(410px);
+        transform: translate(-50%, -50%) translatey(150px);
       }
       
     </style>
   </head>
   <body>
-    <h1 id="header">Lettre pour Mot</h1>
-    <input type="text" id="input" placeholder="Entrez une lettre ici."></input>
-    <button onclick="submit()">Résultat</button>
-    <div id="container">
+    <div id="wrapper">
+      <h1 id="header">Lettre pour Mot</h1>
+      <input type="text" id="input" placeholder="Entrez une lettre ici."></input>
+      <button onclick="submit()">Résultat</button>
       <h3 id="letter"></h1>
       <p id="for" style="opacity: 0;">pour</p>
       <h3 id="sentence"></h1>
-    </div>
+     </div>
     <script>
       function alphabetPosition(text) {
         var result = "";
