@@ -16,7 +16,7 @@
         position: absolute;
         left: 50%;
         top: 0%;
-        transform: translate(-50%, -50%) translateY(270px);
+        transform: translate(-50%, -50%) translateY(240px);
       }
       button {
         position: absolute;
@@ -39,7 +39,7 @@
     <button onclick="submit()">Résultat</button>
     <div id="container">
       <h1 id="letter"></h1>
-      <p>pour</p>
+      <p id="for" style="opacity: 0;">pour</p>
       <h1 id="sentence"></h1>
     </div>
     <script>
@@ -60,6 +60,7 @@
 
         dletter.innerHTML = query
         dsentence.innerHTML = sentences[alphabetPosition(query)-1]
+        document.getElementById("for").style.opacity = "1"
       }
     </script>
   </body>
