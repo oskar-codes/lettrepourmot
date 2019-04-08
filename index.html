@@ -23,5 +23,64 @@
   <body>
     <h1>Lettre pour Mot</h1>
     <input type="text" placeholder="Entrez une lettre ici."></input>
+    <button onclick="submit()">Résultat</button>
+    <h1 id="letter"></h1>
+    <p>pour</p>
+    <h1 id="sentence></h1>
+            
+    <script>
+      function getAllUrlParams(url) {
+        var queryString = url ? url.split('?')[1] : window.location.search.slice(1);
+        var obj = {};
+        if (queryString) {
+          queryString = queryString.split('#')[0];
+          var arr = queryString.split('&');
+          for (var i = 0; i < arr.length; i++) {
+            var a = arr[i].split('=');
+            var paramName = a[0];
+            var paramValue = typeof (a[1]) === 'undefined' ? true : a[1];
+            paramName = paramName.toLowerCase();
+            if (typeof paramValue === 'string') paramValue = paramValue.toLowerCase();
+            if (paramName.match(/\[(\d+)?\]$/)) {
+              var key = paramName.replace(/\[(\d+)?\]/, '');
+              if (!obj[key]) obj[key] = [];
+              if (paramName.match(/\[\d+\]$/)) {
+                var index = /\[(\d+)\]/.exec(paramName)[1];
+                obj[key][index] = paramValue;
+              } else {
+                obj[key].push(paramValue);
+              }
+            } else {
+              if (!obj[paramName]) {
+                obj[paramName] = paramValue;
+              } else if (obj[paramName] && typeof obj[paramName] === 'string'){
+                obj[paramName] = [obj[paramName]];
+                obj[paramName].push(paramValue);
+              } else {
+                obj[paramName].push(paramValue);
+              }
+            }
+          }
+        }
+        return obj;
+      }
+
+      function alphabetPosition(text) {
+        var result = "";
+        for (var i = 0; i < text.length; i++) {
+          var code = text.toUpperCase().charCodeAt(i)
+          if (code > 64 && code < 91) result += (code - 64) + " ";
+        }
+        return result.slice(0, result.length - 1);
+      }
+
+      var query = getAllUrlParams().q
+      var sentences = ["Artichaut commettant le suicide", "Bâtiment recherchant la solution", "Cataclysme grelottant", "Destruction de la librairie d’Alexandrie", "Électromagnétisme sociopate", "Fs in the chat bois", "Gnome intersidéral", "Hôpital aux éthiques variables", "Indivisibilité caractéristique", "Julienne coupées de façon non orthodoxe", "Kangourou risquant l’avant gazé", "Loi injuste oppressant le peuple", "Malaxeur imparisyllabique de de faible qualité", "Noircissement permanent et non soluble de fer avec comme cause l’oxydation", "Orthophonie ridiculisant la politique de confidentialité indienne", "Paresse incorrigible rabaissant la constitution monarchique", "Pour quaternisation digitale de l’arbuste sauvage", "Retard tragique de l’agrandissement social et économique", "Solution aquatique à base de souffre salé et d’artichaut soufflé", "Triangle des Bermudes aux entrecôtes de porc", "Utilisation non catholique de la bouée de sauvetage", "Voiture de sauvetage d’ornithorynques athéistes", "Walibi dépassant la vélocité autorisée", "Xylophone à acronyme sexuel", "Yacht permettant la démocratisation des calomnies", "Zoophilie dénigrante des efforts jubilant du système dystopique martien"]
+      var dletter = document.getElementById("letter")
+      var dsentence = document.getElementById("sentence")
+      
+      dletter.innerHTML = query
+      dsentence.innerHTML = sentences[alphabetPosition(query)]
+    </script>
   </body>
 </html>
