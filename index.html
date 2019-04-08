@@ -6,12 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="style.css" />
     <style>
-      
-        /*background-color: #eee;
+      #wrapper {
+        background-color: #eee;
         position: fixed;
         top: 0%;
         left: 50%;
-        transform: translate(-50%, -50%) translatey(150px);*/
+        transform: translate(-50%, -50%) translatey(150px);
+      }
+      
       h3, p {
         text-align: left;
       }
@@ -21,12 +23,14 @@
     </style>
   </head>
   <body>
-      <h1 id="header">Lettre pour Mot</h1>
-      <input type="text" id="input" placeholder="Entrez une lettre ici."></input>
-      <button onclick="submit()">Résultat</button>
-      <h3 id="letter"></h1>
-      <p id="for" style="opacity: 0;">pour</p>
-      <h3 id="sentence"></h1>
+       <div id="wrapper">
+        <h1 id="header">Lettre pour Mot</h1>
+        <input type="text" id="input" placeholder="Entrez une lettre ici."></input>
+        <button onclick="submit()">Résultat</button>
+        <h3 id="letter"></h1>
+        <p id="for" style="opacity: 0;">pour</p>
+        <h3 id="sentence"></h1>
+       </div>
     <script>
       function alphabetPosition(text) {
         var result = "";
