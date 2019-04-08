@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <p id=letter>Error</p>
     <script>
     function getAllUrlParams(url) {
 
@@ -52,6 +53,8 @@
 
       return obj;
     }
+    var letter = getAllUrlParams().l;
+    document.getElementById("letter").innerHTML = letter;
     </script>
   </body>
 </html>
