@@ -25,13 +25,18 @@
   <body>
        <div id="wrapper">
         <h1 id="header">Lettre pour Mot</h1>
-        <input type="text" id="input" placeholder="Entrez une lettre ici."></input>
+        <input type="text" id="input" onkeyup="lettersOnly(this)" placeholder="Entrez une lettre ici."></input>
         <button onclick="submit()">Résultat</button>
         <h3 id="letter"></h1>
         <p id="for" style="opacity: 0;">pour</p>
         <h3 id="sentence"></h1>
        </div>
     <script>
+      function lettersOnly(input) {
+       var regex = /[^a-z]/gi;
+       input.value = input.value.replace(regex, "");
+      }
+      
       function alphabetPosition(text) {
         var result = "";
         for (var i = 0; i < text.length; i++) {
