@@ -16,19 +16,19 @@
         position: absolute;
         left: 50%;
         top: 0%;
-        transform: translate(-50%, -50%) translateY(300px);
+        transform: translate(-50%, -50%) translateY(270px);
       }
-      #button {
+      button {
         position: absolute;
         left: 50%;
         top: 0%;
-        transform: translate(-50%, -50%) translateY(400px);
+        transform: translate(-50%, -50%) translateY(340px);
       }
       #container {
          position: absolute;
         left: 50%;
         top: 0%;
-        transform: translate(-50%, -50%) translateY(500px);
+        transform: translate(-50%, -50%) translateY(410px);
       }
       
     </style>
@@ -59,7 +59,7 @@
         var dsentence = document.getElementById("sentence")
 
         dletter.innerHTML = query
-        dsentence.innerHTML = sentences[alphabetPosition(query)]
+        dsentence.innerHTML = sentences[alphabetPosition(query)-1]
       }
     </script>
   </body>
