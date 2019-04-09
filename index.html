@@ -39,7 +39,7 @@
   <body>
        <div id="wrapper">
         <h1 id="header">Lettre pour Mot</h1>
-        <input type="text" maxlength="1" id="input" onkeyup="lettersOnly(this)" placeholder="Entrez une lettre ici."></input>
+        <input type="text" onsubmit="submit()" maxlength="1" id="input" onkeyup="lettersOnly(this)" placeholder="Entrez une lettre ici."></input>
         <button onclick="submit()">Résultat</button>
         <h3 id="letter"></h1>
         <p id="for" style="opacity: 0;">pour</p>
